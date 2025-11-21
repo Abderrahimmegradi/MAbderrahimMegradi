@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initProjectInteractions();
     initContactForm();
+    initProjectFilters();
+    initImageModal();
 });
 
 // Loader
@@ -64,9 +66,11 @@ function initNavigation() {
     });
     
     // Show nav on hover at top of page
-    navTrigger.addEventListener('mouseenter', () => {
-        nav.classList.remove('hidden');
-    });
+    if (navTrigger) {
+        navTrigger.addEventListener('mouseenter', () => {
+            nav.classList.remove('hidden');
+        });
+    }
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -186,11 +190,80 @@ function initProjectInteractions() {
     initModelInteractions();
 }
 
+// Project Filters
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                    gsap.to(card, { opacity: 1, scale: 1, duration: 0.5 });
+                } else {
+                    gsap.to(card, { 
+                        opacity: 0, 
+                        scale: 0.8, 
+                        duration: 0.5,
+                        onComplete: () => {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    });
+}
+
+// Image Modal
+function initImageModal() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('modalCaption');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Add event listeners to all view image buttons
+    document.querySelectorAll('.view-image-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            captionText.innerHTML = this.closest('.project-card').querySelector('h4').textContent;
+        });
+    });
+
+    // Close modal when clicking the X
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside the image
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+        }
+    });
+}
+
 // 3D Model Interactions
 function initModelInteractions() {
-    // This function would handle custom interactions with 3D models
-    // For now, we'll rely on model-viewer's built-in controls
-    
     // Add loading states for models
     const modelViewers = document.querySelectorAll('model-viewer');
     
@@ -219,7 +292,7 @@ function initModelInteractions() {
 
 // Contact Form
 function initContactForm() {
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -227,10 +300,10 @@ function initContactForm() {
             
             // Get form data
             const formData = new FormData(this);
-            const name = formData.get('name') || this.querySelector('input[type="text"]').value;
-            const email = formData.get('email') || this.querySelector('input[type="email"]').value;
-            const subject = formData.get('subject') || this.querySelectorAll('input[type="text"]')[1].value;
-            const message = formData.get('message') || this.querySelector('textarea').value;
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
             
             // Simple validation
             if (!name || !email || !message) {

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Furniture Design - Megradi Abderrahim</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    />
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-  </head>
-  <body>
+    
+    <!-- Google Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
     <!-- Loader -->
     <div id="loader">
-      <div class="loader-content">
-        <div class="loader-logo">M</div>
-        <div class="stripe-loader">
-          <div class="stripe"></div>
-          <div class="stripe"></div>
-          <div class="stripe"></div>
+        <div class="loader-content">
+            <div class="loader-logo">M</div>
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Smart Navigation Trigger Area -->
@@ -35,371 +33,316 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-      <div class="container nav-container">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">M</div>
-          Megradi Abderrahim
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div class="nav-toggle">
-          <span class="menu-trigger">
-            <i class="menu-trigger-bar top"></i>
-            <i class="menu-trigger-bar middle"></i>
-            <i class="menu-trigger-bar bottom"></i>
-          </span>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                Megradi Abderrahim
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="menu-trigger">
+                    <i class="menu-trigger-bar top"></i>
+                    <i class="menu-trigger-bar middle"></i>
+                    <i class="menu-trigger-bar bottom"></i>
+                </span>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Project Detail Section -->
     <section class="project-detail">
-      <div class="container">
-        <div class="project-detail-hero">
-          <h1>3D Furniture <span class="gradient-text">Design</span></h1>
-          <p>
-            Creating photorealistic furniture models with attention to detail
-            and material accuracy
-          </p>
+        <div class="container">
+            <div class="project-detail-hero">
+                <h1>3D Furniture <span class="gradient-text">Design</span></h1>
+                <p>Creating photorealistic furniture models with attention to detail and material accuracy</p>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-detail-model">
+                    <model-viewer
+                        id="main-model"
+                        src="models/dining_table.glb"
+                        alt="Wooden Table"
+                        camera-controls
+                        auto-rotate
+                        camera-orbit="0deg 75deg 105%"
+                        background-color="#1a1a2e"
+                    ></model-viewer>
+
+                    <div class="model-controls-panel">
+                        <button class="model-control-btn active" onclick="toggleAutoRotate()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="resetCamera()">
+                            <i class="fas fa-crosshairs"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="changeEnvironment()">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </div>
+
+                    <p class="model-instructions">
+                        Interactive 3D model • Drag to rotate • Scroll to zoom
+                    </p>
+                </div>
+
+                <div class="project-detail-info">
+                    <div>
+                        <h3>Project Overview</h3>
+                        <p>
+                            This project showcases my complete workflow for creating
+                            photorealistic 3D furniture models. The wooden table represents
+                            my approach to organic modeling, material creation, and lighting
+                            setup that brings virtual objects to life.
+                        </p>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Project Duration</h4>
+                                <p>2 Weeks</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-cube"></i>
+                                <h4>Polygon Count</h4>
+                                <p>25,842 Tris</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-palette"></i>
+                                <h4>Textures</h4>
+                                <p>4K PBR Set</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-tools"></i>
+                                <h4>Software</h4>
+                                <p>Blender, Substance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>High-poly modeling</strong> with clean topology for animation readiness</li>
+                            <li><strong>Procedural wood textures</strong> with realistic grain patterns</li>
+                            <li><strong>PBR material workflow</strong> for accurate light interaction</li>
+                            <li><strong>Optimized UV mapping</strong> with minimal stretching</li>
+                            <li><strong>Real-world scale</strong> and proportions</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-highlight">
+                        <h4>🛠️ Technical Achievement</h4>
+                        <p>
+                            Developed a custom node-based wood shader in Blender that
+                            simulates real wood aging and wear patterns, reducing texture
+                            memory usage by 60% compared to traditional bitmap approaches.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-detail-steps">
+                <h2>My <span class="accent-text">Blender Workflow</span></h2>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Reference Collection & Blueprint Setup</h3>
+                        </div>
+                    </div>
+                    <p>
+                        I began by gathering extensive reference images of mid-century
+                        modern furniture. Using Blender's background images feature, I set
+                        up blueprints from multiple angles to ensure accurate proportions.
+                        This foundation is crucial for creating believable furniture that
+                        follows real-world design principles.
+                    </p>
+                    <div class="challenge-solution">
+                        <h4>💡 Pro Tip</h4>
+                        <p>
+                            Always collect references from multiple angles and lighting
+                            conditions. I use PureRef to organize my reference boards and
+                            keep them visible throughout the modeling process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Blocking & Primary Forms</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Starting with primitive cubes and cylinders, I blocked out the
+                        major shapes focusing on overall proportions. At this stage, I
+                        paid special attention to the table's ergonomics and real-world
+                        dimensions, ensuring it would feel natural in a virtual
+                        environment.
+                    </p>
+                    <div class="project-gallery">
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <p>Initial Blockout</p>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-placeholder">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <p>Proportion Check</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Detailed Modeling & Edge Flow</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Using subdivision surface modeling techniques, I refined the basic
+                        shapes into detailed forms. I focused on creating clean edge loops
+                        around curved areas and beveled sharp edges to catch realistic
+                        highlights. The table legs received particular attention with
+                        proper edge flow for potential deformation.
+                    </p>
+                    <div class="technique-highlight">
+                        <h4>🎯 Key Technique: Subdivision Surface</h4>
+                        <p>
+                            I used supporting edge loops to maintain sharp corners while
+                            benefiting from subdivision smoothing. This approach allows for
+                            high-quality results with relatively low polycount.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>UV Unwrapping & Texture Planning</h3>
+                        </div>
+                    </div>
+                    <p>
+                        I carefully unwrapped the model using Blender's UV editing tools,
+                        ensuring minimal stretching and efficient texture space usage.
+                        Strategic seams were placed in less visible areas, and I utilized
+                        UV grids to verify distortion-free mapping.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Material Creation & Shader Development</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Using Blender's node editor, I created a complex wood material
+                        with layered imperfections. The shader includes:
+                    </p>
+                    <ul>
+                        <li>Procedural wood grain with controllable direction and intensity</li>
+                        <li>Wear maps for edges and high-contact areas</li>
+                        <li>Micro-surface variations for realistic light scattering</li>
+                        <li>Clear coat layer for finished wood appearance</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Lighting & Rendering Setup</h3>
+                        </div>
+                    </div>
+                    <p>
+                        I implemented a three-point lighting system with an HDRI
+                        environment for natural reflections. Using Cycles render engine
+                        with optimized sample settings, I achieved photorealistic results
+                        while maintaining reasonable render times.
+                    </p>
+                    <div class="challenge-solution">
+                        <h4>⚡ Performance Optimization</h4>
+                        <p>
+                            By using adaptive subdivision and denoising, I reduced render
+                            times by 40% without sacrificing quality. The final scene
+                            renders in under 5 minutes at 4K resolution.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h3>Export & Real-time Optimization</h3>
+                        </div>
+                    </div>
+                    <p>For web display, I optimized the model by:</p>
+                    <ul>
+                        <li>Reducing polygon count while preserving visual quality</li>
+                        <li>Baking high-poly details into normal maps</li>
+                        <li>Optimizing texture sizes and formats</li>
+                        <li>Setting up LOD (Level of Detail) versions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html#projects" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <a href="project-WineGlass.html" class="btn btn-primary">
+                    Next Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
-
-        <div class="project-detail-content">
-          <div class="project-detail-model">
-            <model-viewer
-              id="main-model"
-              src="models/table.glb"
-              alt="Wooden Table"
-              camera-controls
-              auto-rotate
-              camera-orbit="0deg 75deg 105%"
-              background-color="#1a1a2e"
-              style="width: 100%; height: 400px; border-radius: 15px"
-            ></model-viewer>
-
-            <div class="model-controls-panel">
-              <button
-                class="model-control-btn active"
-                onclick="toggleAutoRotate()"
-              >
-                <i class="fas fa-sync-alt"></i>
-              </button>
-              <button class="model-control-btn" onclick="resetCamera()">
-                <i class="fas fa-crosshairs"></i>
-              </button>
-              <button class="model-control-btn" onclick="changeEnvironment()">
-                <i class="fas fa-sun"></i>
-              </button>
-            </div>
-
-            <p
-              style="
-                margin-top: 15px;
-                font-style: italic;
-                color: var(--accent2);
-              "
-            >
-              Interactive 3D model • Drag to rotate • Scroll to zoom
-            </p>
-          </div>
-
-          <div class="project-detail-info">
-            <div>
-              <h3>Project Overview</h3>
-              <p>
-                This project showcases my complete workflow for creating
-                photorealistic 3D furniture models. The wooden table represents
-                my approach to organic modeling, material creation, and lighting
-                setup that brings virtual objects to life.
-              </p>
-
-              <div class="project-meta">
-                <div class="meta-item">
-                  <i class="fas fa-clock"></i>
-                  <h4>Project Duration</h4>
-                  <p>2 Weeks</p>
-                </div>
-                <div class="meta-item">
-                  <i class="fas fa-cube"></i>
-                  <h4>Polygon Count</h4>
-                  <p>25,842 Tris</p>
-                </div>
-                <div class="meta-item">
-                  <i class="fas fa-palette"></i>
-                  <h4>Textures</h4>
-                  <p>4K PBR Set</p>
-                </div>
-                <div class="meta-item">
-                  <i class="fas fa-tools"></i>
-                  <h4>Software</h4>
-                  <p>Blender, Substance</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3>Key Features</h3>
-              <ul style="margin-left: 20px; line-height: 1.8">
-                <li>
-                  <strong>High-poly modeling</strong> with clean topology for
-                  animation readiness
-                </li>
-                <li>
-                  <strong>Procedural wood textures</strong> with realistic grain
-                  patterns
-                </li>
-                <li>
-                  <strong>PBR material workflow</strong> for accurate light
-                  interaction
-                </li>
-                <li>
-                  <strong>Optimized UV mapping</strong> with minimal stretching
-                </li>
-                <li><strong>Real-world scale</strong> and proportions</li>
-              </ul>
-            </div>
-
-            <div class="technique-highlight">
-              <h4>🛠️ Technical Achievement</h4>
-              <p>
-                Developed a custom node-based wood shader in Blender that
-                simulates real wood aging and wear patterns, reducing texture
-                memory usage by 60% compared to traditional bitmap approaches.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-detail-steps">
-          <h2>My <span class="accent-text">Blender Workflow</span></h2>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">1</div>
-              <div class="step-content">
-                <h3>Reference Collection & Blueprint Setup</h3>
-              </div>
-            </div>
-            <p>
-              I began by gathering extensive reference images of mid-century
-              modern furniture. Using Blender's background images feature, I set
-              up blueprints from multiple angles to ensure accurate proportions.
-              This foundation is crucial for creating believable furniture that
-              follows real-world design principles.
-            </p>
-            <div class="challenge-solution">
-              <h4>💡 Pro Tip</h4>
-              <p>
-                Always collect references from multiple angles and lighting
-                conditions. I use PureRef to organize my reference boards and
-                keep them visible throughout the modeling process.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">2</div>
-              <div class="step-content">
-                <h3>Blocking & Primary Forms</h3>
-              </div>
-            </div>
-            <p>
-              Starting with primitive cubes and cylinders, I blocked out the
-              major shapes focusing on overall proportions. At this stage, I
-              paid special attention to the table's ergonomics and real-world
-              dimensions, ensuring it would feel natural in a virtual
-              environment.
-            </p>
-            <div class="project-gallery">
-              <div class="gallery-item">
-                <div
-                  style="
-                    width: 100%;
-                    height: 150px;
-                    background: var(--gradient);
-                    border-radius: 8px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="fas fa-cube"
-                    style="font-size: 2rem; color: white"
-                  ></i>
-                </div>
-                <p>Initial Blockout</p>
-              </div>
-              <div class="gallery-item">
-                <div
-                  style="
-                    width: 100%;
-                    height: 150px;
-                    background: var(--gradient2);
-                    border-radius: 8px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  "
-                >
-                  <i
-                    class="fas fa-ruler-combined"
-                    style="font-size: 2rem; color: white"
-                  ></i>
-                </div>
-                <p>Proportion Check</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">3</div>
-              <div class="step-content">
-                <h3>Detailed Modeling & Edge Flow</h3>
-              </div>
-            </div>
-            <p>
-              Using subdivision surface modeling techniques, I refined the basic
-              shapes into detailed forms. I focused on creating clean edge loops
-              around curved areas and beveled sharp edges to catch realistic
-              highlights. The table legs received particular attention with
-              proper edge flow for potential deformation.
-            </p>
-            <div class="technique-highlight">
-              <h4>🎯 Key Technique: Subdivision Surface</h4>
-              <p>
-                I used supporting edge loops to maintain sharp corners while
-                benefiting from subdivision smoothing. This approach allows for
-                high-quality results with relatively low polycount.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">4</div>
-              <div class="step-content">
-                <h3>UV Unwrapping & Texture Planning</h3>
-              </div>
-            </div>
-            <p>
-              I carefully unwrapped the model using Blender's UV editing tools,
-              ensuring minimal stretching and efficient texture space usage.
-              Strategic seams were placed in less visible areas, and I utilized
-              UV grids to verify distortion-free mapping.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">5</div>
-              <div class="step-content">
-                <h3>Material Creation & Shader Development</h3>
-              </div>
-            </div>
-            <p>
-              Using Blender's node editor, I created a complex wood material
-              with layered imperfections. The shader includes:
-            </p>
-            <ul style="margin-left: 20px; line-height: 1.8">
-              <li>
-                Procedural wood grain with controllable direction and intensity
-              </li>
-              <li>Wear maps for edges and high-contact areas</li>
-              <li>Micro-surface variations for realistic light scattering</li>
-              <li>Clear coat layer for finished wood appearance</li>
-            </ul>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">6</div>
-              <div class="step-content">
-                <h3>Lighting & Rendering Setup</h3>
-              </div>
-            </div>
-            <p>
-              I implemented a three-point lighting system with an HDRI
-              environment for natural reflections. Using Cycles render engine
-              with optimized sample settings, I achieved photorealistic results
-              while maintaining reasonable render times.
-            </p>
-            <div class="challenge-solution">
-              <h4>⚡ Performance Optimization</h4>
-              <p>
-                By using adaptive subdivision and denoising, I reduced render
-                times by 40% without sacrificing quality. The final scene
-                renders in under 5 minutes at 4K resolution.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-header">
-              <div class="step-number">7</div>
-              <div class="step-content">
-                <h3>Export & Real-time Optimization</h3>
-              </div>
-            </div>
-            <p>For web display, I optimized the model by:</p>
-            <ul style="margin-left: 20px; line-height: 1.8">
-              <li>Reducing polygon count while preserving visual quality</li>
-              <li>Baking high-poly details into normal maps</li>
-              <li>Optimizing texture sizes and formats</li>
-              <li>Setting up LOD (Level of Detail) versions</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="navigation-buttons">
-          <a href="index.html#projects" class="btn btn-secondary">
-            <i class="fas fa-arrow-left"></i> Back to Projects
-          </a>
-          <a href="project-camaro.html" class="btn btn-primary">
-            Next Project <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
     </section>
 
     <script src="js/script.js"></script>
+
     <script>
-      // Model viewer controls
-      function toggleAutoRotate() {
-        const modelViewer = document.getElementById("main-model");
-        modelViewer.autoRotate = !modelViewer.autoRotate;
-        document
-          .querySelector(".model-control-btn:nth-child(1)")
-          .classList.toggle("active", modelViewer.autoRotate);
-      }
+        // Model viewer controls
+        function toggleAutoRotate() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.autoRotate = !modelViewer.autoRotate;
+            document.querySelector(".model-control-btn:nth-child(1)").classList.toggle("active", modelViewer.autoRotate);
+        }
 
-      function resetCamera() {
-        const modelViewer = document.getElementById("main-model");
-        modelViewer.cameraOrbit = "0deg 75deg 105%";
-      }
+        function resetCamera() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.cameraOrbit = "0deg 75deg 105%";
+        }
 
-      function changeEnvironment() {
-        const modelViewer = document.getElementById("main-model");
-        const current = modelViewer.style.getPropertyValue(
-          "--environment-image"
-        );
-        modelViewer.style.setProperty(
-          "--environment-image",
-          "url(https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr)"
-        );
-      }
+        function changeEnvironment() {
+            const modelViewer = document.getElementById("main-model");
+            const current = modelViewer.style.getPropertyValue("--environment-image");
+            modelViewer.style.setProperty(
+                "--environment-image",
+                "url(https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr)"
+            );
+        }
 
-      // Add loading state
-      const modelViewer = document.getElementById("main-model");
-      modelViewer.addEventListener("load", () => {
-        console.log("3D Furniture model loaded successfully");
-      });
+        // Add loading state
+        const modelViewer = document.getElementById("main-model");
+        modelViewer.addEventListener("load", () => {
+            console.log("3D Furniture model loaded successfully");
+        });
     </script>
-  </body>
+</body>
 </html>
