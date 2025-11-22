@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Old PC Hacking Scene - Megradi Abderrahim</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">M</div>
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Navigation Trigger Area -->
+    <div class="nav-trigger-area" id="navTrigger"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                Megradi Abderrahim
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="menu-trigger">
+                    <i class="menu-trigger-bar top"></i>
+                    <i class="menu-trigger-bar middle"></i>
+                    <i class="menu-trigger-bar bottom"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-hero">
+                <h1>Old PC <span class="gradient-text">Hacking Scene</span></h1>
+                <p>Dynamic scene animation with fluid simulations and motion graphics</p>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-detail-model">
+                    <div class="video-container">
+                        <video id="hacking-video" controls poster="images/pc-hacking-poster.jpg">
+                            <source src="models/OldPcHacking.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <div class="video-controls">
+                        <button class="model-control-btn active" onclick="togglePlay()">
+                            <i class="fas fa-play" id="play-icon"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="toggleMute()">
+                            <i class="fas fa-volume-up" id="volume-icon"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="toggleFullscreen()">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+
+                    <p class="model-instructions">
+                        Animation Video • 45 seconds • 4K Resolution
+                    </p>
+                </div>
+
+                <div class="project-detail-info">
+                    <div>
+                        <h3>Scene Concept</h3>
+                        <p>
+                            This cyberpunk-inspired animation brings to life a nostalgic hacking scene featuring retro computer equipment with modern visual effects. The project combines vintage technology aesthetics with contemporary fluid simulations and particle effects to create a compelling narrative of digital intrusion.
+                        </p>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Project Duration</h4>
+                                <p>5 Weeks</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-film"></i>
+                                <h4>Video Length</h4>
+                                <p>45 Seconds</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-palette"></i>
+                                <h4>Resolution</h4>
+                                <p>4K UHD</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-tools"></i>
+                                <h4>Software</h4>
+                                <p>Blender, After Effects</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Production Pipeline</h3>
+                        <ul>
+                            <li><strong>Retro hardware modeling</strong> with authentic details</li>
+                            <li><strong>Fluid simulations</strong> for digital data streams</li>
+                            <li><strong>Particle systems</strong> for hacking effects</li>
+                            <li><strong>Motion graphics</strong> and terminal animations</li>
+                            <li><strong>Cyberpunk lighting</strong> and atmosphere</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-highlight">
+                        <h4>💻 Digital Atmosphere</h4>
+                        <p>
+                            Created a unique hybrid aesthetic combining nostalgic 80s computer hardware with modern visual effects, using custom shaders and particle systems to simulate digital data flows and hacking sequences in a cyberpunk environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene Features -->
+            <div class="commercial-features">
+                <div class="commercial-feature">
+                    <i class="fas fa-desktop"></i>
+                    <h4>Retro Hardware</h4>
+                    <p>Authentic vintage computer modeling</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-code"></i>
+                    <h4>Data Visualization</h4>
+                    <p>Animated code and digital streams</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Visual Effects</h4>
+                    <p>Particle systems and fluid simulations</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-palette"></i>
+                    <h4>Cyberpunk Style</h4>
+                    <p>Neon lighting and futuristic aesthetics</p>
+                </div>
+            </div>
+
+            <div class="project-detail-steps">
+                <h2>Scene <span class="accent-text">Production Process</span></h2>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Reference Research & Concept Development</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The project began with extensive research into 1980s and 1990s computer hardware, studying iconic models like the IBM PC, Commodore 64, and early Apple computers. I collected reference images of CRT monitors, mechanical keyboards, and bulky computer towers to ensure authentic recreation of the retro computing era.
+                    </p>
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <h4>Hardware Era</h4>
+                            <p>1980s-1990s computer technology</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Visual Style</h4>
+                            <p>Cyberpunk meets retro computing</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Narrative</h4>
+                            <p>Hacking sequence with data visualization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Vintage Hardware Modeling</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Each component of the retro computing setup was meticulously modeled with attention to period-accurate details. The CRT monitor with its curved screen, the mechanical keyboard with sculpted keycaps, and the bulky computer tower were all created with authentic proportions and materials from the era.
+                    </p>
+                    <div class="technique-highlight">
+                        <h4>🔧 Advanced Technique: Wear & Tear</h4>
+                        <p>
+                            Applied procedural wear and tear textures to simulate years of use, including yellowed plastic, scratched surfaces, and dust accumulation, adding authenticity and storytelling to the vintage equipment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Fluid Simulations & Data Streams</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The hacking sequence features complex fluid simulations representing digital data streams. Using Blender's MantaFlow, I created dynamic flows of data that appear to emerge from the computer screen and interact with the physical environment.
+                    </p>
+                    <ul>
+                        <li>Data stream fluid simulations</li>
+                        <li>Particle systems for digital artifacts</li>
+                        <li>Glowing energy effects</li>
+                        <li>Interactive light emissions</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Terminal Animation & Motion Graphics</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The CRT monitor displays an authentic-looking terminal interface with animated code, scrolling text, and hacking sequences. Each element was carefully timed to create a believable hacking narrative with visual feedback.
+                    </p>
+                    <div class="scene-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">0-10s</div>
+                            <div class="timeline-content">
+                                <strong>System Boot</strong> - Terminal initialization and connection sequence
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">10-25s</div>
+                            <div class="timeline-content">
+                                <strong>Data Access</strong> - Code scrolling and system penetration
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">25-35s</div>
+                            <div class="timeline-content">
+                                <strong>Visual Breakout</strong> - Data streams escape the screen
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">35-45s</div>
+                            <div class="timeline-content">
+                                <strong>Climax & Resolution</strong> - Success confirmation and system calm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Cyberpunk Lighting & Atmosphere</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The scene is illuminated with a cyberpunk-inspired lighting setup featuring neon accents, dramatic rim lighting, and volumetric fog. The color palette combines the warm glow of vintage equipment with cool digital blues and purples.
+                    </p>
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <h4>Neon Accents</h4>
+                            <p>Colored LED strips and monitor glow</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Practical Lights</h4>
+                            <p>Desk lamp and monitor illumination</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Atmospheric FX</hh4>
+                            <p>Volumetric fog and light beams</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Rendering & Post-Production</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The final stage involved optimizing render settings for the complex scene, compositing multiple render passes, and adding post-production effects including film grain, chromatic aberration, and color grading to enhance the cyberpunk aesthetic.
+                    </p>
+                    <div class="challenge-solution">
+                        <h4>⚡ Performance Optimization</h4>
+                        <p>
+                            Implemented render layer separation and optimized simulation caching to handle the complex particle and fluid systems, reducing render times by 35% while maintaining cinematic quality for the 4K output.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="project-luffy.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Previous Project
+                </a>
+                <a href="index.html#projects" class="btn btn-primary">
+                    Back to Projects <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/script.js"></script>
+
+    <script>
+        // Video controls for hacking scene
+        const video = document.getElementById('hacking-video');
+        const playIcon = document.getElementById('play-icon');
+        const volumeIcon = document.getElementById('volume-icon');
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                playIcon.className = 'fas fa-pause';
+            } else {
+                video.pause();
+                playIcon.className = 'fas fa-play';
+            }
+        }
+
+        function toggleMute() {
+            video.muted = !video.muted;
+            volumeIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                video.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Update play icon when video ends
+        video.addEventListener('ended', () => {
+            playIcon.className = 'fas fa-play';
+        });
+
+        // Add loading state for the video
+        document.addEventListener('DOMContentLoaded', function() {
+            if (video) {
+                video.addEventListener('loadeddata', () => {
+                    console.log("Old PC hacking scene video loaded successfully");
+                });
+                
+                video.addEventListener('error', () => {
+                    console.error("Failed to load old PC hacking scene video");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

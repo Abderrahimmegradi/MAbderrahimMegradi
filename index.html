@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Megradi Abderrahim - 3D Artist & Full Stack Developer</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Three.js and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
-    <!-- Google Model Viewer -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
 
-<body>
+    <!-- Google Model Viewer -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+
+  <body>
     <!-- Loader -->
     <div id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">M</div>
-            <div class="stripe-loader">
-                <div class="stripe"></div>
-                <div class="stripe"></div>
-                <div class="stripe"></div>
-            </div>
+      <div class="loader-content">
+        <div class="loader-logo">M</div>
+        <div class="stripe-loader">
+          <div class="stripe"></div>
+          <div class="stripe"></div>
+          <div class="stripe"></div>
         </div>
+      </div>
     </div>
 
     <!-- Smart Navigation Trigger Area -->
@@ -37,490 +43,548 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">M</div>
-                Megradi Abderrahim
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="menu-trigger">
-                    <i class="menu-trigger-bar top"></i>
-                    <i class="menu-trigger-bar middle"></i>
-                    <i class="menu-trigger-bar bottom"></i>
-                </span>
-            </div>
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">M</div>
+          Megradi Abderrahim
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span class="menu-trigger">
+            <i class="menu-trigger-bar top"></i>
+            <i class="menu-trigger-bar middle"></i>
+            <i class="menu-trigger-bar bottom"></i>
+          </span>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Megradi <span class="gradient-text">Abderrahim</span>
-                </h1>
-                <h2 class="hero-subtitle">
-                    3D Artist • Full Stack Developer • Data Engineer
-                </h2>
-                <p>
-                    Creating immersive digital experiences through cutting-edge 3D
-                    design, robust web applications, and data-driven solutions.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Megradi <span class="gradient-text">Abderrahim</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            3D Artist • Full Stack Developer • Data Engineer
+          </h2>
+          <p>
+            Creating immersive digital experiences through cutting-edge 3D
+            design, robust web applications, and data-driven solutions.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
         </div>
+      </div>
 
-        <div class="floating-shapes">
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-            <div class="shape"></div>
-        </div>
-        <div class="three-d-container" id="three-container"></div>
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <div class="three-d-container" id="three-container"></div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <h2>About <span class="accent-text">Me</span></h2>
-            <div class="about-content">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h3>Creating Digital Magic</h3>
-                        <p>
-                            I'm a multidisciplinary digital creator with expertise in 3D
-                            design, full stack web development, and data engineering. My
-                            passion lies at the intersection of art and technology, where I
-                            create immersive experiences and robust digital solutions.
-                        </p>
-                        <p>
-                            With a background in both creative and technical fields, I bring
-                            a unique perspective to every project, ensuring that the final
-                            product is not only functional but also visually stunning and
-                            user-friendly.
-                        </p>
-                        <a href="#contact" class="btn btn-primary">Let's Collaborate</a>
-                    </div>
-                    <div class="about-visual">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>About <span class="accent-text">Me</span></h2>
+        <div class="about-content">
+          <div class="about-grid">
+            <div class="about-text">
+              <h3>Creating Digital Magic</h3>
+              <p>
+                I'm a multidisciplinary digital creator with expertise in 3D
+                design, full stack web development, and data engineering. My
+                passion lies at the intersection of art and technology, where I
+                create immersive experiences and robust digital solutions.
+              </p>
+              <p>
+                With a background in both creative and technical fields, I bring
+                a unique perspective to every project, ensuring that the final
+                product is not only functional but also visually stunning and
+                user-friendly.
+              </p>
+              <a href="#contact" class="btn btn-primary">Let's Collaborate</a>
             </div>
+            <div class="about-visual">
+              <i class="fas fa-cube"></i>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <div class="container">
-            <h2>My <span class="accent-text">Skills</span></h2>
-            <div class="skills">
-                <div class="skills-grid">
-                    <!-- 3D Design Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h4>3D Design & Animation</h4>
-                        <p>Creating stunning 3D models, animations, and visual effects</p>
-                        <div class="skill-items">
-                            <div class="skill-item">Blender</div>
-                            <div class="skill-item">3D Modeling</div>
-                            <div class="skill-item">Texturing</div>
-                            <div class="skill-item">Rigging</div>
-                            <div class="skill-item">Animation</div>
-                            <div class="skill-item">Rendering</div>
-                            <div class="skill-item">UV Mapping</div>
-                            <div class="skill-item">Lighting</div>
-                        </div>
-                    </div>
-
-                    <!-- Frontend Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Frontend Development</h4>
-                        <p>Building responsive and interactive user interfaces</p>
-                        <div class="skill-items">
-                            <div class="skill-item">HTML5</div>
-                            <div class="skill-item">CSS3</div>
-                            <div class="skill-item">JavaScript</div>
-                            <div class="skill-item">React</div>
-                            <div class="skill-item">Vue.js</div>
-                            <div class="skill-item">Three.js</div>
-                            <div class="skill-item">GSAP</div>
-                            <div class="skill-item">Bootstrap</div>
-                        </div>
-                    </div>
-
-                    <!-- Backend Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h4>Backend Development</h4>
-                        <p>Developing robust server-side applications and APIs</p>
-                        <div class="skill-items">
-                            <div class="skill-item">Node.js</div>
-                            <div class="skill-item">Python</div>
-                            <div class="skill-item">Express</div>
-                            <div class="skill-item">Django</div>
-                            <div class="skill-item">REST APIs</div>
-                            <div class="skill-item">GraphQL</div>
-                            <div class="skill-item">MongoDB</div>
-                            <div class="skill-item">PostgreSQL</div>
-                        </div>
-                    </div>
-
-                    <!-- Data Engineering Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4>Data Engineering</h4>
-                        <p>Designing and building data pipelines and infrastructure</p>
-                        <div class="skill-items">
-                            <div class="skill-item">Python</div>
-                            <div class="skill-item">SQL</div>
-                            <div class="skill-item">Apache Spark</div>
-                            <div class="skill-item">ETL Processes</div>
-                            <div class="skill-item">Data Warehousing</div>
-                            <div class="skill-item">Big Data</div>
-                            <div class="skill-item">AWS</div>
-                            <div class="skill-item">Docker</div>
-                        </div>
-                    </div>
-
-                    <!-- AI Tools Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>AI Tools & Integration</h4>
-                        <p>
-                            Leveraging AI technologies to enhance applications and workflows
-                        </p>
-                        <div class="skill-items">
-                            <div class="skill-item">Machine Learning</div>
-                            <div class="skill-item">TensorFlow</div>
-                            <div class="skill-item">PyTorch</div>
-                            <div class="skill-item">OpenAI API</div>
-                            <div class="skill-item">Computer Vision</div>
-                            <div class="skill-item">NLP</div>
-                            <div class="skill-item">AI Integration</div>
-                            <div class="skill-item">Automation</div>
-                        </div>
-                    </div>
-
-                    <!-- E-commerce & Marketing Skills -->
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h4>E-commerce & Marketing</h4>
-                        <p>
-                            Building and optimizing online stores with effective marketing
-                            strategies
-                        </p>
-                        <div class="skill-items">
-                            <div class="skill-item">Shopify</div>
-                            <div class="skill-item">WooCommerce</div>
-                            <div class="skill-item">Digital Marketing</div>
-                            <div class="skill-item">SEO</div>
-                            <div class="skill-item">Google Analytics</div>
-                            <div class="skill-item">Social Media Marketing</div>
-                            <div class="skill-item">Conversion Optimization</div>
-                            <div class="skill-item">Email Marketing</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2>My <span class="accent-text">Skills</span></h2>
+        <div class="skills">
+          <div class="skills-grid">
+            <!-- 3D Design Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-cube"></i>
+              </div>
+              <h4>3D Design & Animation</h4>
+              <p>Creating stunning 3D models, animations, and visual effects</p>
+              <div class="skill-items">
+                <div class="skill-item">Blender</div>
+                <div class="skill-item">3D Modeling</div>
+                <div class="skill-item">Texturing</div>
+                <div class="skill-item">Rigging</div>
+                <div class="skill-item">Animation</div>
+                <div class="skill-item">Rendering</div>
+                <div class="skill-item">UV Mapping</div>
+                <div class="skill-item">Lighting</div>
+              </div>
             </div>
+
+            <!-- Frontend Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>Frontend Development</h4>
+              <p>Building responsive and interactive user interfaces</p>
+              <div class="skill-items">
+                <div class="skill-item">HTML5</div>
+                <div class="skill-item">CSS3</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Vue.js</div>
+                <div class="skill-item">Three.js</div>
+                <div class="skill-item">GSAP</div>
+                <div class="skill-item">Bootstrap</div>
+              </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h4>Backend Development</h4>
+              <p>Developing robust server-side applications and APIs</p>
+              <div class="skill-items">
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Express</div>
+                <div class="skill-item">Django</div>
+                <div class="skill-item">REST APIs</div>
+                <div class="skill-item">GraphQL</div>
+                <div class="skill-item">MongoDB</div>
+                <div class="skill-item">PostgreSQL</div>
+              </div>
+            </div>
+
+            <!-- Data Engineering Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h4>Data Engineering</h4>
+              <p>Designing and building data pipelines and infrastructure</p>
+              <div class="skill-items">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">SQL</div>
+                <div class="skill-item">Apache Spark</div>
+                <div class="skill-item">ETL Processes</div>
+                <div class="skill-item">Data Warehousing</div>
+                <div class="skill-item">Big Data</div>
+                <div class="skill-item">AWS</div>
+                <div class="skill-item">Docker</div>
+              </div>
+            </div>
+
+            <!-- AI Tools Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h4>AI Tools & Integration</h4>
+              <p>
+                Leveraging AI technologies to enhance applications and workflows
+              </p>
+              <div class="skill-items">
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">PyTorch</div>
+                <div class="skill-item">OpenAI API</div>
+                <div class="skill-item">Computer Vision</div>
+                <div class="skill-item">NLP</div>
+                <div class="skill-item">AI Integration</div>
+                <div class="skill-item">Automation</div>
+              </div>
+            </div>
+
+            <!-- E-commerce & Marketing Skills -->
+            <div class="skill-category">
+              <div class="skill-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h4>E-commerce & Marketing</h4>
+              <p>
+                Building and optimizing online stores with effective marketing
+                strategies
+              </p>
+              <div class="skill-items">
+                <div class="skill-item">Shopify</div>
+                <div class="skill-item">WooCommerce</div>
+                <div class="skill-item">Digital Marketing</div>
+                <div class="skill-item">SEO</div>
+                <div class="skill-item">Google Analytics</div>
+                <div class="skill-item">Social Media Marketing</div>
+                <div class="skill-item">Conversion Optimization</div>
+                <div class="skill-item">Email Marketing</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <div class="container">
-            <h2>My <span class="accent-text">Blender Projects</span></h2>
+      <div class="container">
+        <h2>My <span class="accent-text">Blender Projects</span></h2>
 
-            <!-- Project Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="render">Renders</button>
-                <button class="filter-btn" data-filter="video">Videos</button>
-                <button class="filter-btn" data-filter="model">3D Models</button>
-                <button class="filter-btn" data-filter="animation">Animations</button>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1 - 3D Model -->
-                <div class="project-card" data-category="model">
-                    <div class="project-image">
-                        <model-viewer
-                            src="models/dining_table.glb"
-                            alt="Wooden Table"
-                            camera-controls
-                            auto-rotate
-                            background-color="#1a1a2e"
-                        ></model-viewer>
-                        <div class="project-type-badge">
-                            <i class="fas fa-cube"></i> 3D Model
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>3D Furniture Design</h4>
-                        <p>
-                            Photorealistic 3D models of modern furniture with detailed
-                            textures and lighting.
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">3D Modeling</div>
-                            <div class="project-tag">Texturing</div>
-                        </div>
-                        <a href="project-furniture.html" class="btn btn-secondary">View Project Details</a>
-                    </div>
-                </div>
-
-                <!-- Project 2 - Render Image -->
-                <div class="project-card" data-category="render">
-                    <div class="project-image">
-                        <div class="image-container">
-                            <img src="models/WineGlass.png" alt="Wine Glass Render" />
-                            <div class="project-overlay">
-                                <button class="view-image-btn" data-image="models/WineGlass.png">
-                                    <i class="fas fa-expand"></i> View Full Size
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-type-badge">
-                            <i class="fas fa-image"></i> Render
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Wine Glass Render</h4>
-                        <p>
-                            High-quality glass rendering with realistic materials and lighting.
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">Cycles</div>
-                            <div class="project-tag">Glass Material</div>
-                        </div>
-                        <a href="project-WineGlass.html" class="btn btn-secondary">View Project Details</a>
-                    </div>
-                </div>
-
-                <!-- Project 3 - Video -->
-                <div class="project-card" data-category="video">
-                    <div class="project-image">
-                        <div class="video-container">
-                            <video controls poster="videos/product-animation-poster.jpg">
-                                <source src="models/EnergySodaPubVedio.mp4" type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="project-type-badge">
-                                <i class="fas fa-video"></i> Animation
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Energy Drink Commercial</h4>
-                        <p>
-                            Dynamic product animation with fluid simulations and motion graphics.
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">Animation</div>
-                            <div class="project-tag">Fluid Simulation</div>
-                        </div>
-                        <a href="project-product-animation.html" class="btn btn-secondary">View Project Details</a>
-                    </div>
-                </div>
-
-                <!-- Project 4 - 3D Model -->
-                <div class="project-card" data-category="model">
-                    <div class="project-image">
-                        <model-viewer
-                            src="models/WineGlass.glb"
-                            alt="Wine Glass 3D Model"
-                            camera-controls
-                            auto-rotate
-                            background-color="#1a1a2e"
-                        ></model-viewer>
-                        <div class="project-type-badge">
-                            <i class="fas fa-cube"></i> 3D Model
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Crystal Wine Glass</h4>
-                        <p>
-                            Elegant wine glass model with realistic glass material and proportions.
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">Glass Material</div>
-                            <div class="project-tag">PBR Texturing</div>
-                        </div>
-                        <a href="project-WineGlass.html" class="btn btn-secondary">View Project Details</a>
-                    </div>
-                </div>
-
-                <!-- Project 5 - 3D Model -->
-                <div class="project-card" data-category="model">
-                    <div class="project-image">
-                        <model-viewer
-                            src="models/luffy.glb"
-                            alt="Monkey D Luffy"
-                            camera-controls
-                            auto-rotate
-                            background-color="#1a1a2e"
-                        ></model-viewer>
-                        <div class="project-type-badge">
-                            <i class="fas fa-cube"></i> 3D Model
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>Anime Character Sculpt</h4>
-                        <p>
-                            Detailed character model of Monkey D. Luffy from One Piece with
-                            dynamic posing.
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">Character</div>
-                            <div class="project-tag">Sculpting</div>
-                        </div>
-                        <a href="project-luffy.html" class="btn btn-secondary">Coming Soon</a>
-                    </div>
-                </div>
-
-                <!-- Project 6 - Placeholder for future projects -->
-                <div class="project-card" data-category="animation">
-                    <div class="project-image">
-                        <div class="placeholder-model">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <div class="project-type-badge">
-                            <i class="fas fa-video"></i> Animation
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h4>More Projects Coming Soon</h4>
-                        <p>
-                            Working on new animations and 3D projects. Stay tuned for updates!
-                        </p>
-                        <div class="project-tags">
-                            <div class="project-tag">Blender</div>
-                            <div class="project-tag">Animation</div>
-                            <div class="project-tag">3D Design</div>
-                        </div>
-                        <a href="#contact" class="btn btn-secondary">Get Updates</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Project Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="render">Renders</button>
+          <button class="filter-btn" data-filter="video">Videos</button>
+          <button class="filter-btn" data-filter="model">3D Models</button>
+          <button class="filter-btn" data-filter="animation">Animations</button>
         </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 - 3D Model -->
+          <div class="project-card" data-category="model">
+            <div class="project-image">
+              <model-viewer
+                src="models/dining_table.glb"
+                alt="Wooden Table"
+                camera-controls
+                auto-rotate
+                background-color="#1a1a2e"
+              ></model-viewer>
+              <div class="project-type-badge">
+                <i class="fas fa-cube"></i> 3D Model
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>3D Furniture Design</h4>
+              <p>
+                Photorealistic 3D models of modern furniture with detailed
+                textures and lighting.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">3D Modeling</div>
+                <div class="project-tag">Texturing</div>
+              </div>
+              <a href="project-furniture.html" class="btn btn-secondary"
+                >View Project Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 - Render Image -->
+          <div class="project-card" data-category="render">
+            <div class="project-image">
+              <div class="image-container">
+                <img src="models/WineGlass.png" alt="Wine Glass Render" />
+                <div class="project-overlay">
+                  <button
+                    class="view-image-btn"
+                    data-image="models/WineGlass.png"
+                  >
+                    <i class="fas fa-expand"></i> View Full Size
+                  </button>
+                </div>
+              </div>
+              <div class="project-type-badge">
+                <i class="fas fa-image"></i> Render
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>Wine Glass Render</h4>
+              <p>
+                High-quality glass rendering with realistic materials and
+                lighting.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">Cycles</div>
+                <div class="project-tag">Glass Material</div>
+              </div>
+              <a href="project-WineGlass.html" class="btn btn-secondary"
+                >View Project Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 3 - Video -->
+          <div class="project-card" data-category="video">
+            <div class="project-image">
+              <div class="video-container">
+                <video controls poster="videos/product-animation-poster.jpg">
+                  <source
+                    src="models/EnergySodaPubVedio.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="project-type-badge">
+                  <i class="fas fa-video"></i> Animation
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>Energy Drink Commercial</h4>
+              <p>
+                Dynamic product animation with fluid simulations and motion
+                graphics.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">Animation</div>
+                <div class="project-tag">Fluid Simulation</div>
+              </div>
+              <a href="project-product-animation.html" class="btn btn-secondary"
+                >View Project Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 4 - 3D Model -->
+          <div class="project-card" data-category="model">
+            <div class="project-image">
+              <model-viewer
+                src="models/glass_of_wine.glb"
+                alt="Wine Glass 3D Model"
+                camera-controls
+                auto-rotate
+                background-color="#1a1a2e"
+              ></model-viewer>
+              <div class="project-type-badge">
+                <i class="fas fa-cube"></i> 3D Model
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>Crystal Wine Glass</h4>
+              <p>
+                Elegant wine glass model with realistic glass material and
+                proportions.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">Glass Material</div>
+                <div class="project-tag">PBR Texturing</div>
+              </div>
+              <a href="project-GlassOfWine.html" class="btn btn-secondary"
+                >View Project Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 5 - 3D Model -->
+          <div class="project-card" data-category="model">
+            <div class="project-image">
+              <model-viewer
+                src="models/monkey_d_luffy_damage_-_one_piece.glb"
+                alt="Monkey D Luffy"
+                camera-controls
+                auto-rotate
+                background-color="#1a1a2e"
+              ></model-viewer>
+              <div class="project-type-badge">
+                <i class="fas fa-cube"></i> 3D Model
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>Anime Character Sculpt</h4>
+              <p>
+                Detailed character model of Monkey D. Luffy from One Piece with
+                dynamic posing.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">Character</div>
+                <div class="project-tag">Sculpting</div>
+              </div>
+              <a href="monkey_d_luffy.html" class="btn btn-secondary"
+                >View Project</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 6 - Video -->
+          <div class="project-card" data-category="video">
+            <div class="project-image">
+              <div class="video-container">
+                <video controls poster="videos/product-animation-poster.jpg">
+                  <source
+                    src="models/OldPcHacking.mov"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="project-type-badge">
+                  <i class="fas fa-video"></i> Animation
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h4>Old Pc Hacking scene</h4>
+              <p>
+                Dynamic scene animation with fluid simulations and motion
+                graphics.
+              </p>
+              <div class="project-tags">
+                <div class="project-tag">Blender</div>
+                <div class="project-tag">Animation</div>
+                <div class="project-tag">Fluid Simulation</div>
+              </div>
+              <a href="OldPcHacking.html" class="btn btn-secondary"
+                >View Project Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Image Modal -->
     <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage" />
-        <div id="modalCaption"></div>
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modalImage" />
+      <div id="modalCaption"></div>
     </div>
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Get In <span class="accent-text">Touch</span></h2>
-            <div class="contact">
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Let's create something amazing together</h3>
-                        <p>
-                            I'm always open to discussing new projects, creative ideas, or
-                            opportunities to be part of your vision.
-                        </p>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>megradiabderrahim@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+213 (773) 246-520</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Algiers, Algeria</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Your Name" required name="name" />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Your Email" required name="email" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" placeholder="Subject" name="subject" />
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-input form-textarea" placeholder="Your Message" required name="message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+      <div class="container">
+        <h2>Get In <span class="accent-text">Touch</span></h2>
+        <div class="contact">
+          <div class="contact-container">
+            <div class="contact-info">
+              <h3>Let's create something amazing together</h3>
+              <p>
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
+              </p>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
                 </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>megradiabderrahim@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+213 (773) 246-520</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <p>Algiers, Algeria</p>
+                </div>
+              </div>
             </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Your Name"
+                  required
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-input"
+                  placeholder="Your Email"
+                  required
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Subject"
+                  name="subject"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-input form-textarea"
+                  placeholder="Your Message"
+                  required
+                  name="message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <div class="logo-icon">M</div>
-                    Megradi Abderrahim
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-artstation"></i></a>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Megradi Abderrahim. All Rights Reserved.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="logo">
+            <div class="logo-icon">M</div>
+            Megradi Abderrahim
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-artstation"></i
+            ></a>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2025 Megradi Abderrahim. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
