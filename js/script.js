@@ -311,22 +311,23 @@ function initModelInteractions() {
     });
 }
 
-// Contact Form
+// Contact Form with EmailJS - USING YOUR IDs
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     
     if (!contactForm) return;
     
+    // Initialize EmailJS with your public key
+    emailjs.init("mV3jRjollvHITFTkC"); // Using what you think is public key
+    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
+        // Basic validation
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const message = this.message.value.trim();
         
-        // Validation
         if (!name || !email || !message) {
             showNotification('Please fill in all required fields.', 'error');
             return;
@@ -337,22 +338,32 @@ function initContactForm() {
             return;
         }
         
-        // Simulate form submission
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
-        setTimeout(() => {
+        // Send email using EmailJS
+        emailjs.sendForm(
+            'service_velvtqa',     // Your service ID
+            'template_zaetutt',    // Your template ID
+            this
+        )
+        .then(function(response) {
+            console.log('Email sent successfully!', response);
             showNotification('Thank you for your message! I will get back to you soon.', 'success');
-            this.reset();
+            contactForm.reset();
+        }, function(error) {
+            console.error('EmailJS Error:', error);
+            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+        })
+        .finally(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        });
     });
 }
-
 // Utility Functions
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
