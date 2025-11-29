@@ -347,7 +347,7 @@ function initContactForm() {
         // Send email using EmailJS
         emailjs.sendForm(
             'service_velvtqa',     // Your service ID
-            'template_zaetutt',    // Your template ID
+            'template_sjcsjmd',    // Your template ID
             this
         )
         .then(function(response) {
