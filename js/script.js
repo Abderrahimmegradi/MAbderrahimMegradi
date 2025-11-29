@@ -3,7 +3,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize everything after page load
     initLoader();
     initNavigation();
     initHeroAnimation();
@@ -12,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initProjectFilters();
     initImageModal();
+    initMobileMenu();
 });
 
 // Loader
 function initLoader() {
     const loader = document.getElementById('loader');
     
-    // Hide loader after page load
     window.addEventListener('load', function() {
         setTimeout(() => {
             gsap.to(loader, {
@@ -28,7 +27,7 @@ function initLoader() {
                     loader.style.display = 'none';
                 }
             });
-        }, 1500);
+        }, 1000);
     });
 }
 
@@ -39,17 +38,14 @@ function initNavigation() {
     let lastScrollY = window.scrollY;
     let ticking = false;
     
-    // Function to update nav visibility
     function updateNavVisibility() {
         const currentScrollY = window.scrollY;
         
         if (currentScrollY <= 50) {
             nav.classList.remove('hidden');
-        } else if (currentScrollY > lastScrollY) {
-            // Scrolling down
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
             nav.classList.add('hidden');
         } else {
-            // Scrolling up
             nav.classList.remove('hidden');
         }
         
@@ -57,7 +53,6 @@ function initNavigation() {
         ticking = false;
     }
     
-    // Throttled scroll event listener
     window.addEventListener('scroll', () => {
         if (!ticking) {
             requestAnimationFrame(updateNavVisibility);
@@ -65,58 +60,85 @@ function initNavigation() {
         }
     });
     
-    // Show nav on hover at top of page
     if (navTrigger) {
         navTrigger.addEventListener('mouseenter', () => {
             nav.classList.remove('hidden');
         });
     }
     
-    // Smooth scrolling for navigation links
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#') return;
+            
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
             const targetElement = document.querySelector(targetId);
+            
             if (targetElement) {
+                const navHeight = document.getElementById('navbar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navHeight;
+                
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                closeMobileMenu();
             }
         });
     });
 }
 
+// Mobile Menu
+function initMobileMenu() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+}
+
+function closeMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const navToggle = document.querySelector('.nav-toggle');
+    
+    if (navLinks && navToggle) {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+    }
+}
+
 // Hero Section Animation
 function initHeroAnimation() {
-    // Animate hero content
     gsap.from('.hero-title, .hero-subtitle, .hero p, .hero-buttons', {
-        duration: 1,
-        y: 50,
+        duration: 1.2,
+        y: 60,
         opacity: 0,
-        stagger: 0.2,
-        ease: 'power3.out'
+        stagger: 0.3,
+        ease: 'power3.out',
+        delay: 0.5
     });
     
-    // Animate floating shapes
     gsap.to('.shape', {
         y: 'random(-30, 30)',
-        rotation: 'random(-10, 10)',
-        duration: 'random(3, 6)',
+        rotation: 'random(-15, 15)',
+        duration: 'random(4, 8)',
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut',
-        stagger: 0.5
+        stagger: 0.3
     });
 }
 
 // Scroll Animations
 function initScrollAnimations() {
-    // Animate sections on scroll
+    // Section animations
     gsap.utils.toArray('section').forEach(section => {
         gsap.from(section, {
             scrollTrigger: {
@@ -125,39 +147,41 @@ function initScrollAnimations() {
                 end: 'bottom 20%',
                 toggleActions: 'play none none reverse'
             },
-            y: 50,
+            y: 60,
             opacity: 0,
             duration: 1,
             ease: 'power3.out'
         });
     });
     
-    // Animate skill cards
-    gsap.utils.toArray('.skill-category').forEach(card => {
+    // Skill cards animation
+    gsap.utils.toArray('.skill-category').forEach((card, i) => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
                 start: 'top 85%',
                 toggleActions: 'play none none reverse'
             },
-            y: 30,
+            y: 40,
             opacity: 0,
             duration: 0.8,
+            delay: i * 0.1,
             ease: 'power2.out'
         });
     });
     
-    // Animate project cards
-    gsap.utils.toArray('.project-card').forEach(card => {
+    // Project cards animation
+    gsap.utils.toArray('.project-card').forEach((card, i) => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
                 start: 'top 85%',
                 toggleActions: 'play none none reverse'
             },
-            y: 30,
+            y: 40,
             opacity: 0,
             duration: 0.8,
+            delay: i * 0.1,
             ease: 'power2.out'
         });
     });
@@ -165,14 +189,13 @@ function initScrollAnimations() {
 
 // Project Interactions
 function initProjectInteractions() {
-    // Add hover effects to project cards
     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             gsap.to(this, {
-                y: -10,
-                duration: 0.3,
+                y: -8,
+                duration: 0.4,
                 ease: 'power2.out'
             });
         });
@@ -180,13 +203,12 @@ function initProjectInteractions() {
         card.addEventListener('mouseleave', function() {
             gsap.to(this, {
                 y: 0,
-                duration: 0.3,
+                duration: 0.4,
                 ease: 'power2.out'
             });
         });
     });
     
-    // Initialize 3D model interactions
     initModelInteractions();
 }
 
@@ -197,21 +219,27 @@ function initProjectFilters() {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
+            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
 
             const filterValue = this.getAttribute('data-filter');
 
+            // Filter projects
             projectCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
-                    gsap.to(card, { opacity: 1, scale: 1, duration: 0.5 });
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    gsap.to(card, {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.5,
+                        display: 'block'
+                    });
                 } else {
-                    gsap.to(card, { 
-                        opacity: 0, 
-                        scale: 0.8, 
+                    gsap.to(card, {
+                        opacity: 0,
+                        scale: 0.8,
                         duration: 0.5,
                         onComplete: () => {
                             card.style.display = 'none';
@@ -226,36 +254,36 @@ function initProjectFilters() {
 // Image Modal
 function initImageModal() {
     const modal = document.getElementById('imageModal');
+    if (!modal) return;
+
     const modalImg = document.getElementById('modalImage');
     const captionText = document.getElementById('modalCaption');
     const closeModal = document.querySelector('.close-modal');
 
-    // Add event listeners to all view image buttons
     document.querySelectorAll('.view-image-btn').forEach(button => {
         button.addEventListener('click', function() {
             const imageSrc = this.getAttribute('data-image');
             modal.style.display = 'block';
             modalImg.src = imageSrc;
-            captionText.innerHTML = this.closest('.project-card').querySelector('h4').textContent;
+            
+            const projectTitle = this.closest('.project-card').querySelector('h4');
+            captionText.innerHTML = projectTitle ? projectTitle.textContent : 'Project Image';
         });
     });
 
-    // Close modal when clicking the X
     if (closeModal) {
-        closeModal.addEventListener('click', function() {
+        closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
         });
     }
 
-    // Close modal when clicking outside the image
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
 
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
         }
@@ -264,28 +292,21 @@ function initImageModal() {
 
 // 3D Model Interactions
 function initModelInteractions() {
-    // Add loading states for models
     const modelViewers = document.querySelectorAll('model-viewer');
     
     modelViewers.forEach(viewer => {
         viewer.addEventListener('load', function() {
-            console.log('3D model loaded successfully');
+            console.log('3D model loaded:', this.src);
         });
         
         viewer.addEventListener('error', function() {
-            console.error('Failed to load 3D model');
-            // Fallback: Show placeholder image
-            const placeholder = document.createElement('div');
-            placeholder.style.width = '100%';
-            placeholder.style.height = '100%';
-            placeholder.style.background = 'var(--gradient)';
-            placeholder.style.borderRadius = '10px 10px 0 0';
-            placeholder.style.display = 'flex';
-            placeholder.style.alignItems = 'center';
-            placeholder.style.justifyContent = 'center';
-            placeholder.innerHTML = '<i class="fas fa-cube" style="font-size: 3rem; color: white;"></i>';
+            console.warn('3D model failed to load:', this.src);
+            this.style.display = 'none';
             
-            this.parentNode.replaceChild(placeholder, this);
+            const placeholder = this.parentNode.querySelector('.model-placeholder');
+            if (placeholder) {
+                placeholder.style.display = 'flex';
+            }
         });
     });
 }
@@ -294,48 +315,106 @@ function initModelInteractions() {
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // In a real application, you would send this data to a server
-            console.log('Form submitted:', { name, email, subject, message });
-            
-            // Show success message
-            alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // Validation
+        if (!name || !email || !message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+            showNotification('Thank you for your message! I will get back to you soon.', 'success');
             this.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
+    });
+}
+
+// Utility Functions
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'error' ? '#ff4757' : type === 'success' ? '#2ed573' : '#1e90ff'};
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        z-index: 10000;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    gsap.from(notification, {
+        x: 300,
+        opacity: 0,
+        duration: 0.3
+    });
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+        gsap.to(notification, {
+            x: 300,
+            opacity: 0,
+            duration: 0.3,
+            onComplete: () => {
+                notification.remove();
+            }
         });
-    }
+    }, 5000);
 }
 
-// Utility function for handling responsive behavior
+// Handle responsive behavior
 function handleResize() {
-    // Adjust any layout elements on window resize
-    const nav = document.getElementById('navbar');
-    if (window.innerWidth <= 768) {
-        // Mobile adjustments
-    } else {
-        // Desktop adjustments
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
     }
 }
 
-// Listen for window resize
+// Event Listeners
 window.addEventListener('resize', handleResize);
-
-// Initialize on page load
 window.addEventListener('load', handleResize);
+
+// Initialize Three.js scene if needed
+function initThreeScene() {
+    const container = document.getElementById('three-container');
+    if (!container) return;
+    
+    // Basic Three.js scene setup can be added here
+    console.log('Three.js container ready');
+}

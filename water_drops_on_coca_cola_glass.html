@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coca-Cola Bottle with Water Drops - Megradi Abderrahim</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">M</div>
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Navigation Trigger Area -->
+    <div class="nav-trigger-area" id="navTrigger"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                Megradi Abderrahim
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="menu-trigger">
+                    <i class="menu-trigger-bar top"></i>
+                    <i class="menu-trigger-bar middle"></i>
+                    <i class="menu-trigger-bar bottom"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-hero">
+                <h1>Coca-Cola Bottle <span class="gradient-text">with Water Drops</span></h1>
+                <p>Photorealistic condensation effects on an iconic glass bottle</p>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-detail-model">
+                    <model-viewer
+                        id="main-model"
+                        src="models/water_drops_on_coca_cola_glass.glb"
+                        alt="Coca-Cola Bottle with Water Drops"
+                        camera-controls
+                        auto-rotate
+                        camera-orbit="0deg 75deg 105%"
+                        background-color="#1a1a2e"
+                    ></model-viewer>
+
+                    <div class="model-controls-panel">
+                        <button class="model-control-btn active" onclick="toggleAutoRotate()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="resetCamera()">
+                            <i class="fas fa-crosshairs"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="toggleMaterialView()">
+                            <i class="fas fa-vial"></i>
+                        </button>
+                    </div>
+
+                    <p class="model-instructions">
+                        Interactive 3D model • Drag to rotate • Scroll to zoom
+                    </p>
+                </div>
+
+                <div class="project-detail-info">
+                    <div>
+                        <h3>Project Overview</h3>
+                        <p>
+                            This project focuses on advanced material work and fluid simulation to create realistic water condensation on a Coca-Cola glass bottle. The challenge was to accurately simulate how moisture forms and behaves on a cold glass surface, capturing the refreshing appeal of a chilled beverage.
+                        </p>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Project Duration</h4>
+                                <p>3 Weeks</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-cube"></i>
+                                <h4>Polygon Count</h4>
+                                <p>15,280 Tris</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-palette"></i>
+                                <h4>Materials</h4>
+                                <p>5 Unique</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-tools"></i>
+                                <h4>Software</h4>
+                                <p>Blender, Substance Painter</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li><strong>Procedural condensation</strong> with physically accurate droplet formation</li>
+                            <li><strong>Advanced glass material</strong> with accurate IOR (Index of Refraction)</li>
+                            <li><strong>Fluid simulation</strong> for water behavior and coalescence</li>
+                            <li><strong>Surface tension</strong> simulation for realistic droplet shapes</li>
+                            <li><strong>Studio lighting setup</strong> optimized for wet surfaces</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-highlight">
+                        <h4>💧 Fluid Simulation Expertise</h4>
+                        <p>
+                            Developed a custom condensation shader that procedurally generates water droplets with realistic surface tension, contact angles, and light interaction - creating authentic moisture effects that enhance the refreshing quality of the beverage presentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Condensation Features -->
+            <div class="commercial-features">
+                <div class="commercial-feature">
+                    <i class="fas fa-tint"></i>
+                    <h4>Water Droplets</h4>
+                    <p>Physically accurate condensation simulation</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Advanced Lighting</h4>
+                    <p>Custom HDRI setup for wet surface illumination</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-cube"></i>
+                    <h4>Clean Topology</h4>
+                    <p>Optimized mesh with perfect edge flow</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-vial"></i>
+                    <h4>Material Accuracy</h4>
+                    <p>Physically accurate glass and water materials</p>
+                </div>
+            </div>
+
+            <div class="project-detail-steps">
+                <h2>Condensation Simulation <span class="accent-text">Pipeline</span></h2>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Reference Analysis & Droplet Behavior</h3>
+                        </div>
+                    </div>
+                    <p>
+                        I began by studying how condensation forms on cold glass surfaces, analyzing droplet size, distribution patterns, and how they coalesce over time. Using macro photography references, I established the physical principles that govern water behavior on curved surfaces.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Bottle Modeling & Surface Preparation</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The Coca-Cola bottle was meticulously modeled with attention to the iconic contour shape. I focused on creating a clean, subdivision-ready topology that would support detailed condensation effects without artifacts or stretching.
+                    </p>
+                    <div class="technique-highlight">
+                        <h4>🔧 Advanced Technique: Condensation Simulation</h4>
+                        <p>
+                            I created a procedural condensation system using noise textures, vertex displacement, and particle systems to simulate water droplets forming on the cold bottle surface, with accurate surface tension and gravitational effects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Water Material & Droplet Development</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Creating realistic water droplets required a multi-layered approach. The material system includes:
+                    </p>
+                    <div class="material-breakdown">
+                        <div class="material-item">
+                            <h4>Glass Body</h4>
+                            <p>Clear glass with IOR of 1.5</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>Water Droplets</h4>
+                            <p>Transparent water with light refraction</p>
+                        </div>
+                        <div class="material-item">
+                            <h4>Surface Wetness</h4>
+                            <p>Thin water film between droplets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Lighting & Rendering Optimization</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Wet surface rendering requires specialized lighting to showcase transparency and refraction through water droplets. I implemented:
+                    </p>
+                    <ul>
+                        <li>Three-point lighting with emphasis on backlighting</li>
+                        <li>HDRI environment maps for realistic reflections</li>
+                        <li>Caustics calculation for light focusing through droplets</li>
+                        <li>Denoising for clean, noise-free renders</li>
+                    </ul>
+                    <div class="challenge-solution">
+                        <h4>⚡ Performance Optimization</h4>
+                        <p>
+                            By using adaptive sampling and optimizing the condensation shader, I reduced render times by 45% while maintaining the highest quality for transparent materials and complex light interactions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="coca_cola_bottle.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Previous Project
+                </a>
+                <a href="Apple.html" class="btn btn-primary">
+                    Next Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Model controls for condensation bottle page
+        function toggleAutoRotate() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.autoRotate = !modelViewer.autoRotate;
+            document.querySelector(".model-control-btn:nth-child(1)").classList.toggle("active", modelViewer.autoRotate);
+        }
+
+        function resetCamera() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.cameraOrbit = "0deg 75deg 105%";
+        }
+
+        function toggleMaterialView() {
+            // Toggle between different material views
+            const modelViewer = document.getElementById("main-model");
+            console.log("Material view toggle - custom implementation needed");
+            
+            // This would cycle through different material variants in a real implementation
+            const btn = document.querySelector(".model-control-btn:nth-child(3)");
+            btn.classList.toggle("active");
+        }
+        
+        // Add loading state for the condensation bottle model
+        document.addEventListener('DOMContentLoaded', function() {
+            const modelViewer = document.getElementById("main-model");
+            if (modelViewer) {
+                modelViewer.addEventListener('load', () => {
+                    console.log("Coca-Cola bottle with water drops model loaded successfully");
+                });
+                
+                modelViewer.addEventListener('error', () => {
+                    console.error("Failed to load Coca-Cola bottle with water drops model");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

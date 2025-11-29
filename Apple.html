@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple 3D Model - Megradi Abderrahim</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Google Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">M</div>
+            <div class="stripe-loader">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Navigation Trigger Area -->
+    <div class="nav-trigger-area" id="navTrigger"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                Megradi Abderrahim
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="menu-trigger">
+                    <i class="menu-trigger-bar top"></i>
+                    <i class="menu-trigger-bar middle"></i>
+                    <i class="menu-trigger-bar bottom"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-detail-hero">
+                <h1>Realistic <span class="gradient-text">Apple</span> Model</h1>
+                <p>Photorealistic fruit modeling with advanced material properties and natural imperfections</p>
+            </div>
+
+            <div class="project-detail-content">
+                <div class="project-detail-model">
+                    <model-viewer
+                        id="main-model"
+                        src="models/apple.glb"
+                        alt="Realistic Apple 3D Model"
+                        camera-controls
+                        auto-rotate
+                        camera-orbit="0deg 75deg 105%"
+                        background-color="#1a1a2e"
+                        style="width: 100%; height: 400px; border-radius: 15px"
+                    ></model-viewer>
+
+                    <div class="model-controls-panel">
+                        <button class="model-control-btn active" onclick="toggleAutoRotate()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="resetCamera()">
+                            <i class="fas fa-crosshairs"></i>
+                        </button>
+                        <button class="model-control-btn" onclick="toggleMaterialView()">
+                            <i class="fas fa-vial"></i>
+                        </button>
+                    </div>
+
+                    <p class="model-instructions">
+                        Interactive 3D model • Drag to rotate • Scroll to zoom
+                    </p>
+                </div>
+
+                <div class="project-detail-info">
+                    <div>
+                        <h3>Project Vision</h3>
+                        <p>
+                            This project showcases the creation of a photorealistic apple with advanced material work and organic modeling techniques. The focus was on capturing the subtle details of natural fruit - from the complex skin texture to the subsurface scattering that gives fresh produce its characteristic appearance.
+                        </p>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Project Duration</h4>
+                                <p>1 Week</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-cube"></i>
+                                <h4>Polygon Count</h4>
+                                <p>15,200 Tris</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-palette"></i>
+                                <h4>Materials</h4>
+                                <p>3 Unique</p>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-tools"></i>
+                                <h4>Software</h4>
+                                <p>Blender, Substance Painter</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Technical Pipeline</h3>
+                        <ul>
+                            <li><strong>Organic sculpting</strong> for natural fruit form</li>
+                            <li><strong>Subsurface scattering</strong> for realistic light penetration</li>
+                            <li><strong>Procedural textures</strong> for skin imperfections</li>
+                            <li><strong>Stem modeling</strong> with detailed wood texture</li>
+                            <li><strong>Studio lighting</strong> optimized for organic materials</li>
+                        </ul>
+                    </div>
+
+                    <div class="technique-highlight">
+                        <h4>🍎 Material Science Expertise</h4>
+                        <p>
+                            Developed a custom shader system that accurately simulates light interaction with fruit skin, including subsurface scattering, waxiness, and micro-imperfections - achieving photorealistic results that capture the unique properties of fresh produce.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apple Features -->
+            <div class="commercial-features">
+                <div class="commercial-feature">
+                    <i class="fas fa-apple-alt"></i>
+                    <h4>Organic Form</h4>
+                    <p>Natural apple shape with realistic proportions</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-tint"></i>
+                    <h4>Subsurface Scattering</h4>
+                    <p>Accurate light penetration through fruit flesh</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-texture"></i>
+                    <h4>Skin Details</h4>
+                    <p>Realistic pores, spots, and natural variations</p>
+                </div>
+                <div class="commercial-feature">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Stem Accuracy</h4>
+                    <p>Detailed stem with wood-like texture</p>
+                </div>
+            </div>
+
+            <div class="project-detail-steps">
+                <h2>Apple Modeling <span class="accent-text">Pipeline</span></h2>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Reference Analysis & Form Study</h3>
+                        </div>
+                    </div>
+                    <p>
+                        I began by studying various apple varieties, analyzing their unique shapes, proportions, and characteristic features. Using reference photography of Red Delicious apples, I established the classic apple silhouette with its distinctive bottom indentation and stem cavity.
+                    </p>
+                    <div class="breakdown-grid">
+                        <div class="breakdown-item">
+                            <h4>Apple Variety</h4>
+                            <p>Red Delicious characteristics</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Proportions</h4>
+                            <p>Classic apple height-to-width ratio</p>
+                        </div>
+                        <div class="breakdown-item">
+                            <h4>Surface Features</h4>
+                            <p>Stem cavity and bottom indentation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Organic Sculpting & Form Development</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Using sculpting tools in Blender, I created the organic form of the apple, focusing on the subtle asymmetries that make natural fruit appear authentic. The sculpt emphasizes the characteristic curves and indentations while maintaining a clean, optimized topology.
+                    </p>
+                    <div class="technique-highlight">
+                        <h4>🔧 Advanced Technique: Multi-resolution Sculpting</h4>
+                        <p>
+                            Used multi-resolution sculpting to add fine details like subtle dimples and surface variations while maintaining a clean base mesh, creating natural imperfections that enhance realism without compromising performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Material Development & Texture Painting</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Creating realistic apple skin required a multi-layered approach with attention to physical properties. The material system includes complex node setups for accurate light behavior and surface characteristics.
+                    </p>
+                    <ul>
+                        <li>Apple skin with subsurface scattering for light penetration</li>
+                        <li>Procedural spots, pores, and color variations</li>
+                        <li>Waxiness simulation for fresh fruit appearance</li>
+                        <li>Stem material with wood-like texture and roughness</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Lighting & Rendering Optimization</h3>
+                        </div>
+                    </div>
+                    <p>
+                        Organic material rendering requires specialized lighting to showcase subsurface scattering and surface details. I implemented a soft studio lighting environment specifically designed for organic materials, with careful attention to backlighting that highlights the translucent quality of the fruit.
+                    </p>
+                    <div class="scene-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">Key Light</div>
+                            <div class="timeline-content">
+                                <strong>Main Illumination</strong> - Soft front lighting for overall form definition
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Back Light</div>
+                            <div class="timeline-content">
+                                <strong>Rim Lighting</strong> - Accent lights to highlight subsurface scattering
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Fill Lights</div>
+                            <div class="timeline-content">
+                                <strong>Soft Illumination</strong> - Subtle fill lights to reveal shadow details
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Render Settings</div>
+                            <div class="timeline-content">
+                                <strong>Subsurface Optimization</strong> - Specialized settings for translucent materials
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Post-Processing & Final Output</h3>
+                        </div>
+                    </div>
+                    <p>
+                        The final stage involved color grading, subtle sharpening, and preparing the model for various output formats including web display, product visualization, and commercial applications where photorealistic food representation is required.
+                    </p>
+                    <div class="challenge-solution">
+                        <h4>⚡ Performance Optimization</h4>
+                        <p>
+                            By optimizing the subsurface scattering shader and using efficient texture compression, I reduced render times by 40% while maintaining the photorealistic quality essential for food visualization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="water_drops_on_coca_cola_glass.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Previous Project
+                </a>
+                <a href="OldPcHacking.html" class="btn btn-primary">
+                    Next Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <script src="js/script.js"></script>
+
+    <script>
+        // Model controls for apple page
+        function toggleAutoRotate() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.autoRotate = !modelViewer.autoRotate;
+            document
+                .querySelector(".model-control-btn:nth-child(1)")
+                .classList.toggle("active", modelViewer.autoRotate);
+        }
+
+        function resetCamera() {
+            const modelViewer = document.getElementById("main-model");
+            modelViewer.cameraOrbit = "0deg 75deg 105%";
+        }
+
+        function toggleMaterialView() {
+            // Toggle between different material views
+            const modelViewer = document.getElementById("main-model");
+            console.log("Material view toggle - custom implementation needed");
+            
+            // This would cycle through different material variants in a real implementation
+            const btn = document.querySelector(".model-control-btn:nth-child(3)");
+            btn.classList.toggle("active");
+        }
+        
+        // Add loading state for the apple model
+        document.addEventListener('DOMContentLoaded', function() {
+            const modelViewer = document.getElementById("main-model");
+            if (modelViewer) {
+                modelViewer.addEventListener('load', () => {
+                    console.log("Apple model loaded successfully");
+                });
+                
+                modelViewer.addEventListener('error', () => {
+                    console.error("Failed to load apple model");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

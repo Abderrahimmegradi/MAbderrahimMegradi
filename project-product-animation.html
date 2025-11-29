@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energy Drink Commercial - Megradi Abderrahim</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Loader -->
     <div id="loader">
-        <div class="loader-content">
-            <div class="loader-logo">M</div>
-            <div class="stripe-loader">
-                <div class="stripe"></div>
-                <div class="stripe"></div>
-                <div class="stripe"></div>
-            </div>
+      <div class="loader-content">
+        <div class="loader-logo">M</div>
+        <div class="stripe-loader">
+          <div class="stripe"></div>
+          <div class="stripe"></div>
+          <div class="stripe"></div>
         </div>
+      </div>
     </div>
 
     <!-- Smart Navigation Trigger Area -->
@@ -30,320 +33,376 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">M</div>
-                Megradi Abderrahim
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="menu-trigger">
-                    <i class="menu-trigger-bar top"></i>
-                    <i class="menu-trigger-bar middle"></i>
-                    <i class="menu-trigger-bar bottom"></i>
-                </span>
-            </div>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">M</div>
+          Megradi Abderrahim
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span class="menu-trigger">
+            <i class="menu-trigger-bar top"></i>
+            <i class="menu-trigger-bar middle"></i>
+            <i class="menu-trigger-bar bottom"></i>
+          </span>
         </div>
+      </div>
     </nav>
 
     <!-- Project Detail Section -->
     <section class="project-detail">
-        <div class="container">
-            <div class="project-detail-hero">
-                <h1>Energy Soda <span class="gradient-text">Commercial</span></h1>
-                <p>High-energy product commercial featuring dynamic motion graphics and liquid simulations</p>
-            </div>
-
-            <div class="project-detail-content">
-                <div class="project-detail-model">
-                    <div class="video-container">
-                        <video id="commercial-video" controls>
-                            <source src="models/EnergySodaPubVedio.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-
-                    <div class="video-controls">
-                        <button class="model-control-btn active" onclick="togglePlay()">
-                            <i class="fas fa-play" id="play-icon"></i>
-                        </button>
-                        <button class="model-control-btn" onclick="toggleMute()">
-                            <i class="fas fa-volume-up" id="volume-icon"></i>
-                        </button>
-                        <button class="model-control-btn" onclick="toggleFullscreen()">
-                            <i class="fas fa-expand"></i>
-                        </button>
-                    </div>
-
-                    <p class="model-instructions">
-                        Commercial Video • 30 seconds • 4K Resolution
-                    </p>
-                </div>
-
-                <div class="project-detail-info">
-                    <div>
-                        <h3>Commercial Concept</h3>
-                        <p>
-                            This high-energy commercial showcases the vibrant Energy Soda brand through dynamic camera movements, explosive liquid simulations, and energetic motion graphics. The project demonstrates my expertise in commercial animation and product visualization.
-                        </p>
-
-                        <div class="project-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-clock"></i>
-                                <h4>Project Duration</h4>
-                                <p>4 Weeks</p>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-film"></i>
-                                <h4>Video Length</h4>
-                                <p>30 Seconds</p>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-palette"></i>
-                                <h4>Resolution</h4>
-                                <p>4K UHD</p>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-tools"></i>
-                                <h4>Software</h4>
-                                <p>Blender, After Effects</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3>Production Pipeline</h3>
-                        <ul>
-                            <li><strong>Concept development</strong> and storyboarding</li>
-                            <li><strong>3D product modeling</strong> and texturing</li>
-                            <li><strong>Fluid simulations</strong> for dynamic liquid effects</li>
-                            <li><strong>Motion graphics</strong> and typography animation</li>
-                            <li><strong>Color grading</strong> and sound design</li>
-                        </ul>
-                    </div>
-
-                    <div class="technique-highlight">
-                        <h4>⚡ Dynamic Energy</h4>
-                        <p>
-                            Created realistic fluid simulations using Blender's MantaFlow engine combined with custom shaders to achieve the perfect energetic liquid appearance that captures the brand's vibrant identity.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Commercial Features -->
-            <div class="commercial-features">
-                <div class="commercial-feature">
-                    <i class="fas fa-vial"></i>
-                    <h4>Liquid Simulation</h4>
-                    <p>Advanced fluid dynamics for realistic soda effects</p>
-                </div>
-                <div class="commercial-feature">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Energy Effects</h4>
-                    <p>Dynamic particle systems and lighting</p>
-                </div>
-                <div class="commercial-feature">
-                    <i class="fas fa-camera"></i>
-                    <h4>Cinematic Camera</h4>
-                    <p>Professional camera work and motion</p>
-                </div>
-                <div class="commercial-feature">
-                    <i class="fas fa-palette"></i>
-                    <h4>Color Grading</h4>
-                    <p>Vibrant color palette matching brand identity</p>
-                </div>
-            </div>
-
-            <div class="project-detail-steps">
-                <h2>Commercial <span class="accent-text">Production Process</span></h2>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Concept Development & Storyboarding</h3>
-                        </div>
-                    </div>
-                    <p>
-                        The project began with extensive market research and concept development. I created detailed storyboards mapping out each shot, camera angle, and transition to ensure a cohesive narrative flow that effectively communicates the product's energetic nature.
-                    </p>
-                    <div class="breakdown-grid">
-                        <div class="breakdown-item">
-                            <h4>Target Audience</h4>
-                            <p>Young adults (18-35) interested in active lifestyle</p>
-                        </div>
-                        <div class="breakdown-item">
-                            <h4>Brand Message</h4>
-                            <p>Energy, vitality, and modern lifestyle</p>
-                        </div>
-                        <div class="breakdown-item">
-                            <h4>Visual Style</h4>
-                            <p>High-energy, vibrant, and dynamic</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>3D Product Modeling & Texturing</h3>
-                        </div>
-                    </div>
-                    <p>
-                        The Energy Soda can was meticulously modeled with attention to branding details and physical accuracy. I created custom shaders for the aluminum can, condensation effects, and liquid contents to achieve photorealistic results.
-                    </p>
-                    <div class="technique-highlight">
-                        <h4>🔧 Advanced Technique: Condensation Simulation</h4>
-                        <p>
-                            Developed a procedural condensation shader that realistically simulates water droplets forming on the cold can surface, enhancing the refreshing appeal of the product.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Fluid Dynamics & Particle Systems</h3>
-                        </div>
-                    </div>
-                    <p>
-                        The most complex aspect was creating realistic liquid simulations. Using Blender's MantaFlow, I simulated:
-                    </p>
-                    <ul>
-                        <li>Soda pouring and splashing effects</li>
-                        <li>Bubble formation and movement</li>
-                        <li>Liquid surface tension and viscosity</li>
-                        <li>Energy particle emissions</li>
-                    </ul>
-                </div>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Animation & Camera Work</h3>
-                        </div>
-                    </div>
-                    <p>
-                        I choreographed dynamic camera movements and product animations to create a sense of energy and excitement. The animation follows a carefully planned timeline:
-                    </p>
-                    <div class="scene-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-time">0-5s</div>
-                            <div class="timeline-content">
-                                <strong>Product Reveal</strong> - Dramatic can entrance with condensation effects
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">5-15s</div>
-                            <div class="timeline-content">
-                                <strong>Liquid Action</strong> - Dynamic pouring and splashing sequences
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">15-25s</div>
-                            <div class="timeline-content">
-                                <strong>Energy Release</strong> - Particle effects and brand messaging
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">25-30s</div>
-                            <div class="timeline-content">
-                                <strong>Brand Closure</strong> - Logo reveal and call to action
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h3>Lighting, Rendering & Post-Production</h3>
-                        </div>
-                    </div>
-                    <p>
-                        The final stage involved setting up professional studio lighting, optimizing render settings for 4K output, and post-production work including color grading, motion graphics, and sound design synchronization.
-                    </p>
-                    <div class="challenge-solution">
-                        <h4>⚡ Performance Optimization</h4>
-                        <p>
-                            Implemented render layer compositing and optimized simulation cache usage to reduce render times by 40% while maintaining the highest visual quality for broadcast standards.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="navigation-buttons">
-                <a href="project-WineGlass.html" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Previous Project
-                </a>
-                <a href="index.html#projects" class="btn btn-primary">
-                    Back to Projects <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+      <div class="container">
+        <div class="project-detail-hero">
+          <h1>Energy Drink <span class="gradient-text">Commercial</span></h1>
+          <p>
+            High-energy product commercial featuring dynamic motion graphics and
+            liquid simulations
+          </p>
         </div>
+
+        <div class="project-detail-content">
+          <div class="project-detail-model">
+            <div class="project-detail-model">
+              <div class="placeholder-container">
+                <div
+                  class="placeholder-image"
+                  style="background-image: url('images/coming-soon-bg.jpg')"
+                >
+                  <div class="overlay-content">
+                    <i class="fas fa-film"></i>
+                    <h3>Video Coming Soon</h3>
+                    <p>This project is currently in post-production</p>
+                    <button class="notify-btn">Notify Me When Ready</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-controls">
+              <button class="model-control-btn active" onclick="togglePlay()">
+                <i class="fas fa-play" id="play-icon"></i>
+              </button>
+              <button class="model-control-btn" onclick="toggleMute()">
+                <i class="fas fa-volume-up" id="volume-icon"></i>
+              </button>
+              <button class="model-control-btn" onclick="toggleFullscreen()">
+                <i class="fas fa-expand"></i>
+              </button>
+            </div>
+
+            <p class="model-instructions">
+              Commercial Video • 30 seconds • 4K Resolution
+            </p>
+          </div>
+
+          <div class="project-detail-info">
+            <div>
+              <h3>Commercial Concept</h3>
+              <p>
+                This high-energy commercial showcases a vibrant energy drink
+                brand through dynamic camera movements, explosive liquid
+                simulations, and energetic motion graphics. The project
+                demonstrates my expertise in commercial animation, product
+                visualization, and visual effects.
+              </p>
+
+              <div class="project-meta">
+                <div class="meta-item">
+                  <i class="fas fa-clock"></i>
+                  <h4>Project Duration</h4>
+                  <p>4 Weeks</p>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-film"></i>
+                  <h4>Video Length</h4>
+                  <p>30 Seconds</p>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-palette"></i>
+                  <h4>Resolution</h4>
+                  <p>4K UHD</p>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-tools"></i>
+                  <h4>Software</h4>
+                  <p>Blender, After Effects</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3>Production Pipeline</h3>
+              <ul>
+                <li><strong>Concept development</strong> and storyboarding</li>
+                <li><strong>3D product modeling</strong> and texturing</li>
+                <li>
+                  <strong>Fluid simulations</strong> for dynamic liquid effects
+                </li>
+                <li>
+                  <strong>Motion graphics</strong> and typography animation
+                </li>
+                <li><strong>Color grading</strong> and sound design</li>
+              </ul>
+            </div>
+
+            <div class="technique-highlight">
+              <h4>⚡ Dynamic Energy</h4>
+              <p>
+                Created realistic fluid simulations using Blender's MantaFlow
+                engine combined with custom shaders to achieve the perfect
+                energetic liquid appearance that captures the brand's vibrant
+                identity and refreshing qualities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commercial Features -->
+        <div class="commercial-features">
+          <div class="commercial-feature">
+            <i class="fas fa-vial"></i>
+            <h4>Liquid Simulation</h4>
+            <p>Advanced fluid dynamics for realistic beverage effects</p>
+          </div>
+          <div class="commercial-feature">
+            <i class="fas fa-bolt"></i>
+            <h4>Energy Effects</h4>
+            <p>Dynamic particle systems and lighting</p>
+          </div>
+          <div class="commercial-feature">
+            <i class="fas fa-camera"></i>
+            <h4>Cinematic Camera</h4>
+            <p>Professional camera work and motion</p>
+          </div>
+          <div class="commercial-feature">
+            <i class="fas fa-palette"></i>
+            <h4>Color Grading</h4>
+            <p>Vibrant color palette matching brand identity</p>
+          </div>
+        </div>
+
+        <div class="project-detail-steps">
+          <h2>
+            Commercial <span class="accent-text">Production Process</span>
+          </h2>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Concept Development & Storyboarding</h3>
+              </div>
+            </div>
+            <p>
+              The project began with extensive market research and concept
+              development. I created detailed storyboards mapping out each shot,
+              camera angle, and transition to ensure a cohesive narrative flow
+              that effectively communicates the product's energetic nature and
+              refreshing qualities.
+            </p>
+            <div class="breakdown-grid">
+              <div class="breakdown-item">
+                <h4>Target Audience</h4>
+                <p>Young adults (18-35) interested in active lifestyle</p>
+              </div>
+              <div class="breakdown-item">
+                <h4>Brand Message</h4>
+                <p>Energy, vitality, and modern lifestyle</p>
+              </div>
+              <div class="breakdown-item">
+                <h4>Visual Style</h4>
+                <p>High-energy, vibrant, and dynamic</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>3D Product Modeling & Texturing</h3>
+              </div>
+            </div>
+            <p>
+              The energy drink can was meticulously modeled with attention to
+              branding details and physical accuracy. I created custom shaders
+              for the aluminum can, condensation effects, and liquid contents to
+              achieve photorealistic results that highlight the product's
+              appeal.
+            </p>
+            <div class="technique-highlight">
+              <h4>🔧 Advanced Technique: Condensation Simulation</h4>
+              <p>
+                Developed a procedural condensation shader that realistically
+                simulates water droplets forming on the cold can surface,
+                enhancing the refreshing appeal of the product and creating
+                visual interest.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Fluid Dynamics & Particle Systems</h3>
+              </div>
+            </div>
+            <p>
+              The most complex aspect was creating realistic liquid simulations
+              that capture the energetic nature of the product. Using Blender's
+              MantaFlow, I simulated:
+            </p>
+            <ul>
+              <li>Beverage pouring and splashing effects</li>
+              <li>Bubble formation and carbonation movement</li>
+              <li>Liquid surface tension and viscosity</li>
+              <li>Energy particle emissions and light effects</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Animation & Camera Work</h3>
+              </div>
+            </div>
+            <p>
+              I choreographed dynamic camera movements and product animations to
+              create a sense of energy and excitement. The animation follows a
+              carefully planned timeline that builds anticipation and delivers
+              the brand message effectively.
+            </p>
+            <div class="scene-timeline">
+              <div class="timeline-item">
+                <div class="timeline-time">0-5s</div>
+                <div class="timeline-content">
+                  <strong>Product Reveal</strong> - Dramatic can entrance with
+                  condensation effects
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">5-15s</div>
+                <div class="timeline-content">
+                  <strong>Liquid Action</strong> - Dynamic pouring and splashing
+                  sequences
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">15-25s</div>
+                <div class="timeline-content">
+                  <strong>Energy Release</strong> - Particle effects and brand
+                  messaging
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">25-30s</div>
+                <div class="timeline-content">
+                  <strong>Brand Closure</strong> - Logo reveal and call to
+                  action
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>Lighting, Rendering & Post-Production</h3>
+              </div>
+            </div>
+            <p>
+              The final stage involved setting up professional studio lighting,
+              optimizing render settings for 4K output, and post-production work
+              including color grading, motion graphics, and sound design
+              synchronization to create a polished commercial ready for
+              broadcast.
+            </p>
+            <div class="challenge-solution">
+              <h4>⚡ Performance Optimization</h4>
+              <p>
+                Implemented render layer compositing and optimized simulation
+                cache usage to reduce render times by 40% while maintaining the
+                highest visual quality for broadcast standards and digital
+                platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="navigation-buttons">
+          <a href="OldPcHacking.html" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Previous Project
+          </a>
+          <a href="index.html#projects" class="btn btn-primary">
+            Back to Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </section>
-    
+
     <script src="js/script.js"></script>
 
     <script>
-        // Video controls for commercial page
-        const video = document.getElementById('commercial-video');
-        const playIcon = document.getElementById('play-icon');
-        const volumeIcon = document.getElementById('volume-icon');
+      // Video controls for commercial page
+      const video = document.getElementById("commercial-video");
+      const playIcon = document.getElementById("play-icon");
+      const volumeIcon = document.getElementById("volume-icon");
 
-        function togglePlay() {
-            if (video.paused) {
-                video.play();
-                playIcon.className = 'fas fa-pause';
-            } else {
-                video.pause();
-                playIcon.className = 'fas fa-play';
-            }
+      function togglePlay() {
+        if (video.paused) {
+          video.play();
+          playIcon.className = "fas fa-pause";
+        } else {
+          video.pause();
+          playIcon.className = "fas fa-play";
         }
+      }
 
-        function toggleMute() {
-            video.muted = !video.muted;
-            volumeIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+      function toggleMute() {
+        video.muted = !video.muted;
+        volumeIcon.className = video.muted
+          ? "fas fa-volume-mute"
+          : "fas fa-volume-up";
+      }
+
+      function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+          video.requestFullscreen().catch((err) => {
+            console.log(
+              `Error attempting to enable fullscreen: ${err.message}`
+            );
+          });
+        } else {
+          document.exitFullscreen();
         }
+      }
 
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                video.requestFullscreen().catch(err => {
-                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
+      // Update play icon when video ends
+      video.addEventListener("ended", () => {
+        playIcon.className = "fas fa-play";
+      });
+
+      // Add loading state for the video
+      document.addEventListener("DOMContentLoaded", function () {
+        if (video) {
+          video.addEventListener("loadeddata", () => {
+            console.log("Energy drink commercial video loaded successfully");
+          });
+
+          video.addEventListener("error", () => {
+            console.error("Failed to load energy drink commercial video");
+          });
         }
-
-        // Update play icon when video ends
-        video.addEventListener('ended', () => {
-            playIcon.className = 'fas fa-play';
-        });
-
-        // Add loading state for the video
-        document.addEventListener('DOMContentLoaded', function() {
-            if (video) {
-                video.addEventListener('loadeddata', () => {
-                    console.log("Energy soda commercial video loaded successfully");
-                });
-                
-                video.addEventListener('error', () => {
-                    console.error("Failed to load energy soda commercial video");
-                });
-            }
-        });
+      });
     </script>
-</body>
+  </body>
 </html>
